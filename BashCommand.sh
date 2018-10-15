@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 
-yarn add nodemon
+yarn add express-session

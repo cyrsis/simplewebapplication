@@ -10,6 +10,9 @@ var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var home = require('./routes/home');
 
+//Sessions
+var session = require('express-session')
+
 
 
 var app = express();
@@ -31,6 +34,20 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', login);
 app.use('/home', home);
+
+
+//Setup Session
+var sess = {
+    secret: 'keyboard cat',
+    cookie: {}
+}
+
+if (app.get('env') === 'production') {
+    app.set('trust proxy', 1) // trust first proxy
+    sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
