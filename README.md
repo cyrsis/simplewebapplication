@@ -18,3 +18,15 @@ node params:
 /usr/local/bin/nodemon --exec /usr/local/bin/node
 
 ```
+
+## install mariadb - Test out Mysql with Express
+
+```bash
+brew install mariadb
+```
+
+```bash
+#start db server
+mysql.server start
+
+```
