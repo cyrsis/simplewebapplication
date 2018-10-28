@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 
             console.log("Invalid Sessions");
             //     res.render("index",{message:"Please login with vaild Credential"})
-            
+
 
             res.redirect("/");
         }
