@@ -29,4 +29,6 @@ brew install mariadb
 #start db server
 mysql.server start
 
+#sign in
+mysql -u root
 ```
