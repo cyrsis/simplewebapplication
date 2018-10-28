@@ -5,7 +5,13 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
     // res.send('respond with a resource');
 
-    res.render("Welcome", {user: "demo"})
+    if (req.session.user) {
+        var sessionUser = req.session.user;
+        res.render("Welcome", {user: sessionUser.username})
+    } else {
+        res.render("index",{message:"Please login with vaild Credential"})
+    }
+
 
 });
 
